@@ -63,7 +63,7 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width;
+    width = MediaQuery.of(context).size.width * .85;
     activeColor = widget.activeColor ?? Theme.of(context).indicatorColor;
 
     return Container(

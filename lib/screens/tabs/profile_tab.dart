@@ -85,7 +85,7 @@ class _ProfileTabState extends State<ProfileTab>
                     style: TextStyle(
                       color: Colors.grey,
                     )),
-                SizedBox(height: 5),
+                SizedBox(height: 15),
                 ButtonWidget(
                   title: 'Edit Profile',
                   onPressed: () {
@@ -94,41 +94,44 @@ class _ProfileTabState extends State<ProfileTab>
                   },
                   background: true,
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 15),
                 Container(
-                  height: 400,
+                  height: 380,
                   width: double.infinity,
                   child: Row(
                     children: [
-                      Container(
-                        child: RotatedBox(
-                          quarterTurns: 3,
-                          child: TitledBottomNavigationBar(
-                            onTap: onItemClicked,
-                            reverse: false,
-                            items: [
-                              TitledNavigationBarItem(
-                                  title: Text('My Books',
-                                      style: TextStyle(fontSize: 12))),
-                              TitledNavigationBarItem(
-                                  title: Text('My Orders',
-                                      style: TextStyle(fontSize: 12))),
-                              TitledNavigationBarItem(
-                                  title: Text(
-                                'Saved',
-                                style: TextStyle(fontSize: 12),
-                              )),
-                              TitledNavigationBarItem(
-                                  title: Text(
-                                'Liked',
-                                style: TextStyle(fontSize: 12),
-                              )),
-                            ],
-                            currentIndex: selectedIndex,
-                            activeColor: Colors.black,
-                            inactiveColor: Colors.grey,
-                            indicatorColor: Color(0xff0440A7),
-                            enableShadow: false,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 12),
+                        child: Container(
+                          child: RotatedBox(
+                            quarterTurns: 3,
+                            child: TitledBottomNavigationBar(
+                              onTap: onItemClicked,
+                              reverse: false,
+                              items: [
+                                TitledNavigationBarItem(
+                                    title: Text('My Books',
+                                        style: TextStyle(fontSize: 12))),
+                                TitledNavigationBarItem(
+                                    title: Text('My Orders',
+                                        style: TextStyle(fontSize: 12))),
+                                TitledNavigationBarItem(
+                                    title: Text(
+                                  'Saved',
+                                  style: TextStyle(fontSize: 12),
+                                )),
+                                TitledNavigationBarItem(
+                                    title: Text(
+                                  'Liked',
+                                  style: TextStyle(fontSize: 12),
+                                )),
+                              ],
+                              currentIndex: selectedIndex,
+                              activeColor: Colors.black,
+                              inactiveColor: Colors.grey,
+                              indicatorColor: Color(0xff0440A7),
+                              enableShadow: false,
+                            ),
                           ),
                         ),
                       ),
