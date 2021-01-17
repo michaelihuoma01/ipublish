@@ -52,13 +52,6 @@ class _MainPageState extends State<MainPage>
             EditProfile(),
             AddToCart(),
           ]),
-      drawer: new Container(
-          width: 250.0,
-          margin: EdgeInsets.only(bottom: 60.0),
-          color: Colors.blue,
-          child: ListView(
-            children: <Widget>[Text("Hello"), Text("World")],
-          )),
       bottomNavigationBar: Container(
         child: CubertoBottomBar(
           key: Key("BottomBar"),
