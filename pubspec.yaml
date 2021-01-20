@@ -41,6 +41,19 @@ dependencies:
   code_field: ^1.22.0
   flutter_inner_drawer: ^0.5.7+2
   flutter_svg: ^0.19.0 
+  provider: ^4.3.2+2
+  mvc_pattern: ^6.4.0
+  flutter_secure_storage: ^3.3.4
+  shared_preferences: ^0.5.10
+  global_configuration: ^1.6.0
+  http: ^0.12.2
+  get_it: ^5.0.1
+  flushbar: ^1.10.4
+  flutter_windowmanager: ^0.0.2
+  firebase_core: ^0.7.0
+  firebase_crashlytics: ^0.4.0+1
+  firebase_remote_config: ^0.6.0
+  pinput: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +75,9 @@ flutter:
     - assets/images/
     - assets/images/png/
     - assets/images/svg/
+    - assets/cfg/
+    - assets/ 
+    - assets/fonts/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

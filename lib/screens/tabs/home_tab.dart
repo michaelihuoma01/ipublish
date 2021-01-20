@@ -102,6 +102,9 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Container(
                   height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular((10))),
+                  ),
                   child: PageView(
                     physics: ClampingScrollPhysics(),
                     controller: _pageController,
@@ -111,10 +114,14 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                       });
                     },
                     children: <Widget>[
-                      Image.asset('assets/images/png/home1.png'),
-                      Image.asset('assets/images/png/home1.png'),
-                      Image.asset('assets/images/png/home1.png'),
-                      Image.asset('assets/images/png/home1.png'),
+                      Image.asset('assets/images/png/home1.png',
+                          fit: BoxFit.fill),
+                      Image.asset('assets/images/png/home1.png',
+                          fit: BoxFit.fill),
+                      Image.asset('assets/images/png/home1.png',
+                          fit: BoxFit.fill),
+                      Image.asset('assets/images/png/home1.png',
+                          fit: BoxFit.fill),
                     ],
                   ),
                 ),

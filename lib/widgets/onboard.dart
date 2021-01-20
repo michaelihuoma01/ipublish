@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ipublish/screens/auth/login.dart';
 
-Widget getButton(
-  _pageController,
-  String title,
-) {
+Widget getButton(_pageController, String title) {
   return Padding(
     padding: const EdgeInsets.all(20),
     child: RaisedButton(
@@ -82,22 +79,24 @@ Widget indicatorText(bool isActive, Color color) {
         // height: 9.0,
         // width:  9.0,
         decoration: BoxDecoration(
-          color: isActive ? color : Colors.transparent,
-          borderRadius: BorderRadius.all(Radius.circular((25))),
-          border: isActive ? Border.all(width: 0.0, color: Colors.transparent) :  Border.all(width: 1.0, color: Colors.black)
-        ),
+            color: isActive ? color : Colors.transparent,
+            borderRadius: BorderRadius.all(Radius.circular((25))),
+            border: isActive
+                ? Border.all(width: 0.0, color: Colors.transparent)
+                : Border.all(width: 1.0, color: Colors.black)),
         child: Text('Description'),
       ),
-         AnimatedContainer(
+      AnimatedContainer(
         duration: Duration(microseconds: 150),
         margin: EdgeInsets.symmetric(horizontal: 8.0),
         // height: 9.0,
         // width:  9.0,
         decoration: BoxDecoration(
-          color: isActive ? color : Colors.transparent,
-          borderRadius: BorderRadius.all(Radius.circular((25))),
-          border: isActive ? Border.all(width: 0.0, color: Colors.transparent) :  Border.all(width: 1.0, color: Colors.black)
-        ),
+            color: isActive ? color : Colors.transparent,
+            borderRadius: BorderRadius.all(Radius.circular((25))),
+            border: isActive
+                ? Border.all(width: 0.0, color: Colors.transparent)
+                : Border.all(width: 1.0, color: Colors.black)),
         child: Text('Reviews'),
       ),
     ],
@@ -109,12 +108,13 @@ Widget indicator(bool isActive, Color color) {
     duration: Duration(microseconds: 150),
     margin: EdgeInsets.symmetric(horizontal: 8.0),
     height: 9.0,
-    width:  9.0,
+    width: 9.0,
     decoration: BoxDecoration(
-      color: isActive ? color : Colors.transparent,
-      borderRadius: BorderRadius.all(Radius.circular((25))),
-      border: isActive ? Border.all(width: 0.0, color: Colors.transparent) :  Border.all(width: 1.0, color: Colors.black)
-    ),
+        color: isActive ? color : Colors.transparent,
+        borderRadius: BorderRadius.all(Radius.circular((25))),
+        border: isActive
+            ? Border.all(width: 0.0, color: Colors.transparent)
+            : Border.all(width: 1.0, color: Colors.black)),
     // decoration: BoxDecoration(
     //   color: isActive ? Colors.white : Colors.black,
     //   borderRadius: BorderRadius.all(Radius.circular(50)),

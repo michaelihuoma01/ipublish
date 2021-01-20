@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "821270671075",
+    "project_id": "ipublish-1f42f",
+    "storage_bucket": "ipublish-1f42f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821270671075:android:d534e61f62aa7a884f9fd6",
+        "android_client_info": {
+          "package_name": "com.example.ipublish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821270671075-7pgtokcl1qt6mvhh3881qgrv1plc92op.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoGMCY0xKUT0HakS6oMR0J77VhWu88S2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821270671075-7pgtokcl1qt6mvhh3881qgrv1plc92op.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "821270671075-63ru6f8fsqbavnc29f8tp4cn5uab81vr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ipublish"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

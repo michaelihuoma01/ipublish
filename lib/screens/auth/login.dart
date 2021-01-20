@@ -1,24 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:ipublish/controllers/user_controller.dart';
 import 'package:ipublish/helpers/constants.dart';
 import 'package:ipublish/screens/auth/forgot_password.dart';
 import 'package:ipublish/screens/auth/update_password.dart';
 import 'package:ipublish/screens/mainPage.dart';
 import 'package:ipublish/widgets/button.dart';
 import 'package:ipublish/widgets/textformfield_widget.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends StateMVC<LoginScreen> {
+  UserController _con = new UserController();
   bool checkBoxValue = false;
+
+  _LoginScreenState() : super(UserController()) {
+    _con = controller;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
+      key: _con.scaffoldKey,
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -88,6 +96,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormFieldWidget(
                       hintText: 'andy.robertson@gmail.com',
                       fillColor: Colors.white30,
+                      initialValue: _con.user.email,
+                      onChanged: (String input) => _con.user.email = input,
+                      validator: (String input) {
+                        if (input.trim().length == 0)
+                          return 'Please, enter your email address';
+
+                        if (!input.trim().contains('@'))
+                          return 'Invalid email address!';
+                      },
                     ),
                     SizedBox(height: 10),
                     Padding(
@@ -102,6 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormFieldWidget(
                       hintText: '***************',
                       fillColor: Colors.white30,
+                      initialValue: _con.user.password,
+                      onChanged: (String input) => _con.user.password = input,
+                      validator: (String input) {
+                        if (input.trim().length == 0)
+                          return 'Please, set a password';
+                        if (input.trim().length < 8)
+                          return 'Password should be at least 8 characters';
+                      },
                     ),
                     Row(
                       // crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,10 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: ButtonWidget(
                       title: 'Sign In',
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainPage()));
+                        _con.login();
                       },
                       background: true,
                     )),
