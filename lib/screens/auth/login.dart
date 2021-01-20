@@ -84,96 +84,108 @@ class _LoginScreenState extends StateMVC<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 7),
-                      child: Text(
-                        'Email',
-                        style: TextStyle(fontFamily: 'Helvetica'),
-                        textAlign: TextAlign.start,
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    TextFormFieldWidget(
-                      hintText: 'andy.robertson@gmail.com',
-                      fillColor: Colors.white30,
-                      initialValue: _con.user.email,
-                      onChanged: (String input) => _con.user.email = input,
-                      validator: (String input) {
-                        if (input.trim().length == 0)
-                          return 'Please, enter your email address';
+                    Form(
+                      key: _con.loginFormKey,
+                      autovalidate: _con.autoValidate,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 7),
+                            child: Text(
+                              'Email',
+                              style: TextStyle(fontFamily: 'Helvetica'),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          TextFormFieldWidget(
+                            hintText: 'andy.robertson@gmail.com',
+                            fillColor: Colors.white30,
+                            initialValue: _con.user.email,
+                            onChanged: (String input) =>
+                                _con.user.email = input,
+                            validator: (String input) {
+                              if (input.trim().length == 0)
+                                return 'Please, enter your email address';
 
-                        if (!input.trim().contains('@'))
-                          return 'Invalid email address!';
-                      },
-                    ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 7),
-                      child: Text(
-                        'Password',
-                        style: TextStyle(fontFamily: 'Helvetica'),
-                        textAlign: TextAlign.start,
+                              if (!input.trim().contains('@'))
+                                return 'Invalid email address!';
+                            },
+                          ),
+                          SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 7),
+                            child: Text(
+                              'Password',
+                              style: TextStyle(fontFamily: 'Helvetica'),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          TextFormFieldWidget(
+                            hintText: '***************',
+                            fillColor: Colors.white30,
+                            initialValue: _con.user.password,
+                            onChanged: (String input) =>
+                                _con.user.password = input,
+                            validator: (String input) {
+                              if (input.trim().length == 0)
+                                return 'Please, set a password';
+                              if (input.trim().length < 8)
+                                return 'Password should be at least 8 characters';
+                            },
+                          ),
+                          Row(
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                activeColor: Colors.black,
+                                value: checkBoxValue,
+                                onChanged: (value) {
+                                  setState(() {
+                                    if (value) {
+                                      checkBoxValue = value;
+                                    } else {
+                                      checkBoxValue = false;
+                                    }
+                                  });
+                                },
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              UpdatePassword()));
+                                },
+                                child: Text(
+                                  'Remember me',
+                                  style: TextStyle(
+                                      fontFamily: 'Helvetica', fontSize: 13),
+                                ),
+                              ),
+                              SizedBox(width: 50),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ForgotPassword()));
+                                },
+                                child: Text(
+                                  'Forgot Password?',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 14,
+                                      fontFamily: 'Helvetica'),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 5),
-                    TextFormFieldWidget(
-                      hintText: '***************',
-                      fillColor: Colors.white30,
-                      initialValue: _con.user.password,
-                      onChanged: (String input) => _con.user.password = input,
-                      validator: (String input) {
-                        if (input.trim().length == 0)
-                          return 'Please, set a password';
-                        if (input.trim().length < 8)
-                          return 'Password should be at least 8 characters';
-                      },
-                    ),
-                    Row(
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Checkbox(
-                          activeColor: Colors.black,
-                          value: checkBoxValue,
-                          onChanged: (value) {
-                            setState(() {
-                              if (value) {
-                                checkBoxValue = value;
-                              } else {
-                                checkBoxValue = false;
-                              }
-                            });
-                          },
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => UpdatePassword()));
-                          },
-                          child: Text(
-                            'Remember me',
-                            style: TextStyle(
-                                fontFamily: 'Helvetica', fontSize: 13),
-                          ),
-                        ),
-                        SizedBox(width: 50),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ForgotPassword()));
-                          },
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                fontFamily: 'Helvetica'),
-                          ),
-                        ),
-                      ],
                     ),
                     Center(
                         child: ButtonWidget(

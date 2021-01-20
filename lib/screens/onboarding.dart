@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:code_field/code_field.dart';
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:ipublish/controllers/user_controller.dart';
 import 'package:ipublish/helpers/constants.dart';
@@ -266,8 +266,10 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                       ),
                                     ),
                                     SizedBox(height: 10),
-                                    Image.asset(
-                                      'assets/images/png/onboard3.png',
+                                    Center(
+                                      child: Image.asset(
+                                        'assets/images/png/onboard3.png',
+                                      ),
                                     ),
                                     SizedBox(height: 20),
                                     Center(
@@ -385,20 +387,26 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Image.asset(
-                                      kTruckLoadingImage,
-                                      height: 150,
+                                    Center(
+                                      child: Image.asset(
+                                        kTruckLoadingImage,
+                                        height: 150,
+                                      ),
                                     ),
                                     SizedBox(height: 30),
-                                    Text('You\'re all set!',
-                                        style: TextStyle(
-                                            fontFamily: 'Helvetica',
-                                            fontSize: 20)),
+                                    Center(
+                                      child: Text('You\'re all set!',
+                                          style: TextStyle(
+                                              fontFamily: 'Helvetica',
+                                              fontSize: 20)),
+                                    ),
                                     SizedBox(height: 10),
-                                    Text(
-                                        'You have successfully signed up! Start purchasing your favorite books',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle()),
+                                    Center(
+                                      child: Text(
+                                          'You have successfully signed up! Start purchasing your favorite books',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle()),
+                                    ),
                                     _currentPage == _numPages - 1
                                         ? Row(
                                             mainAxisAlignment:
@@ -438,8 +446,8 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                           new BorderRadius.circular(10)),
                                   color: Colors.black,
                                   onPressed: () {
-                                    // _con.register();
-                                    _con.toNextPage();
+                                    _con.register();
+                                    // _con.toNextPage();
                                   },
                                   child: Padding(
                                     padding: const EdgeInsets.all(12),
@@ -471,8 +479,6 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                                       10)),
                                           color: Colors.black,
                                           onPressed: () {
-                                            // _con.verify.token =
-                                            //     codeControl.value;
                                             // _con.verify.email = _con.user.email;
                                             _con.verifyToken();
                                           },

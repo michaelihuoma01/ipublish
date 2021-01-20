@@ -71,8 +71,10 @@ class UserController extends ControllerMVC {
     IResponse<VerifyToken> vRes =
         await user_repo.verifyToken(verify, scaffoldKey?.currentContext);
     if (vRes.status == true) {
-      Navigator.push(scaffoldKey?.currentContext,
-          MaterialPageRoute(builder: (context) => LoginScreen()));
+      // Navigator.push(scaffoldKey?.currentContext,
+      //     MaterialPageRoute(builder: (context) => LoginScreen()));
+      pageController.nextPage(
+          duration: Duration(milliseconds: 300), curve: Curves.easeIn);
       Utility.showMessage(
         scaffoldKey?.currentContext,
         message: 'OTP Verified!',
