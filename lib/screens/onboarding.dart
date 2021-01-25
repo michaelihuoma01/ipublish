@@ -95,7 +95,7 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                       alignment: Alignment.center,
                       children: [
                         Container(
-                          height: MediaQuery.of(context).size.height * .64,
+                          height: MediaQuery.of(context).size.height * .74,
                           child: PageView(
                             physics: ClampingScrollPhysics(),
                             controller: _con.pageController,
@@ -265,26 +265,26 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                         ),
                                       ),
                                     ),
-                                    SizedBox(height: 10),
                                     Center(
                                       child: Image.asset(
                                         'assets/images/png/onboard3.png',
                                       ),
                                     ),
-                                    SizedBox(height: 20),
+                                    SizedBox(height: 10),
                                     Center(
                                       child: Text('Almost there...',
                                           style: TextStyle(
                                               fontFamily: 'Helvetica',
                                               fontSize: 20)),
                                     ),
-                                    SizedBox(height: 10),
+                                    SizedBox(height: 5),
                                     Text(
                                       'Set your password',
                                       style: TextStyle(fontFamily: 'Helvetica'),
                                       textAlign: TextAlign.start,
-                                    ),
-                                    SizedBox(height: 10),
+                                    ), 
+                                    SizedBox(height: 5),
+
                                     TextFormFieldWidget(
                                       hintText: '*******************',
                                       fillColor: Colors.white30,
@@ -341,7 +341,7 @@ class _OnBoardingScreenState extends StateMVC<OnBoardingScreen> {
                                     Text(
                                         'Enter the 4-digit code sent to your email or phone',
                                         style: TextStyle()),
-                                    SizedBox(height: 90),
+                                    SizedBox(height: 20),
                                     // InputCodeField(
                                     //   control: codeControl,
                                     //   count: 4,
