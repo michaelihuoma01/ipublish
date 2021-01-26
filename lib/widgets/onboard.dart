@@ -4,7 +4,7 @@ import 'package:ipublish/screens/auth/login.dart';
 Widget getButton(_pageController, String title) {
   return Padding(
     padding: const EdgeInsets.all(20),
-    child: RaisedButton(
+    child: FlatButton(
       shape: new RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(10)),
       color: Colors.black,
@@ -23,6 +23,25 @@ Widget getButton(_pageController, String title) {
   );
 }
 
+Widget getDisabledButton(String title) {
+  return Padding(
+    padding: const EdgeInsets.all(20),
+    child: FlatButton(
+      shape: new RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(10)),
+      color: Colors.black12,
+      onPressed: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Text(
+          title,
+          style: TextStyle(color: Colors.white60, fontSize: 15.0),
+        ),
+      ),
+    ),
+  );
+}
+
 Widget getLoginButton(String title, context) {
   return Padding(
     padding: const EdgeInsets.all(20),
@@ -31,8 +50,12 @@ Widget getLoginButton(String title, context) {
           borderRadius: new BorderRadius.circular(10)),
       color: Colors.black,
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+         Navigator.of(context).pushReplacementNamed(
+        LoginScreen.routeName,
+        arguments: 0,
+      );
+        // Navigator.push(
+        //     context, MaterialPageRoute(builder: (context) => LoginScreen()));
       },
       child: Padding(
         padding: const EdgeInsets.all(12),

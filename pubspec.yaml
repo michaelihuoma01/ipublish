@@ -54,6 +54,8 @@ dependencies:
   firebase_crashlytics: ^0.4.0+1
   firebase_remote_config: ^0.6.0
   pinput: ^1.0.0
+  flutter_screen_scaler: ^2.0.0
+  epub_viewer: ^0.1.9
 
 dev_dependencies:
   flutter_test:

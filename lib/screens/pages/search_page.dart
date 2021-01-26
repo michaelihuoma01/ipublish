@@ -4,6 +4,8 @@ import 'package:ipublish/widgets/genre.dart';
 import 'package:ipublish/widgets/textformfield_widget.dart';
 
 class SearchPage extends StatefulWidget {
+  static const routeName = '/Search';
+
   @override
   _SearchPageState createState() => _SearchPageState();
 }

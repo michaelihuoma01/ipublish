@@ -7,6 +7,8 @@ import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/button.dart';
 
 class PaymentPage extends StatefulWidget {
+  static const routeName = '/Payment';
+
   @override
   _PaymentPageState createState() => _PaymentPageState();
 }

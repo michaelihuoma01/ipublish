@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 
 class NotificationsPage extends StatefulWidget {
+  static const routeName = '/Notifications';
+
   @override
   _NotificationsPageState createState() => _NotificationsPageState();
 }

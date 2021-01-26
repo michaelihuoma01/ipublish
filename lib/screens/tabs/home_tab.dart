@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ipublish/screens/notifications.dart';
+import 'package:ipublish/screens/pages/notifications.dart';
 import 'package:ipublish/screens/pages/authors.dart';
 import 'package:ipublish/screens/pages/product_page.dart';
 import 'package:ipublish/screens/pages/publishers.dart';

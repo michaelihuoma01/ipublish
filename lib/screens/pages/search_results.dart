@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ipublish/screens/pages/product_page.dart';
 import 'package:ipublish/screens/tabs/add_to_cart.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/books.dart';
-import 'package:ipublish/widgets/genre.dart';
-import 'package:ipublish/widgets/textformfield_widget.dart';
 
 class SearchResults extends StatefulWidget {
+  static const routeName = '/SearchResults';
+
   final String title;
 
   SearchResults({this.title});
@@ -34,20 +33,19 @@ class _SearchResultsState extends State<SearchResults> {
           ),
         ],
       ),
-      body:
-      Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                  child: Text(widget.title,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Paltn',
-                        fontSize: 23,
-                      )),
-                ),
-                Expanded(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: Text(widget.title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Paltn',
+                  fontSize: 23,
+                )),
+          ),
+          Expanded(
             child: Container(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -105,10 +103,8 @@ class _SearchResultsState extends State<SearchResults> {
               ),
             ),
           ),
-              ],
-            ),
-          
-    
+        ],
+      ),
     );
   }
 }

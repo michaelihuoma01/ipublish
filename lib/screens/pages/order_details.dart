@@ -4,6 +4,8 @@ import 'package:ipublish/screens/pages/payment.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 
 class OrderDetails extends StatefulWidget {
+  static const routeName = '/OrderDetails';
+
   @override
   _OrderDetailsState createState() => _OrderDetailsState();
 }
@@ -290,8 +292,8 @@ class _OrderDetailsState extends State<OrderDetails> {
                   onPressed: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => PaymentPage())),
                   child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     child: Text(
                       'Place Order',
                       style: TextStyle(color: Colors.white, fontSize: 15.0),

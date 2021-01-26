@@ -2,14 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:ipublish/elements/overlay_widget.dart';
 import 'package:ipublish/helpers/constants.dart';
 import 'package:ipublish/helpers/utility.dart';
 import 'package:ipublish/models/iresponse.dart';
-import 'package:ipublish/models/password.dart';
 import 'package:ipublish/models/user.dart';
 import 'package:ipublish/models/verify_otp.dart';
-import 'package:ipublish/screens/auth/login.dart';
 import 'package:ipublish/screens/mainPage.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -48,8 +45,10 @@ class UserController extends ControllerMVC {
       storage.write(key: "name", value: res.data.name);
       storage.write(key: "phoneNumber", value: res.data.phone);
       setUserDetails(res.data);
-      Navigator.push(scaffoldKey?.currentContext,
-          MaterialPageRoute(builder: (context) => MainPage()));
+      Navigator.of(scaffoldKey?.currentContext).pushReplacementNamed(
+        MainPage.routeName,
+        arguments: 0,
+      );
 
       loader.remove();
     } else {

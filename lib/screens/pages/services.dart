@@ -3,12 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/services_tile.dart';
 
-class DesignServices extends StatefulWidget {
+class ServicesPage extends StatefulWidget {
+  static const routeName = '/Services';
+
   @override
-  _DesignServicesState createState() => _DesignServicesState();
+  _ServicesPageState createState() => _ServicesPageState();
 }
 
-class _DesignServicesState extends State<DesignServices> {
+class _ServicesPageState extends State<ServicesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

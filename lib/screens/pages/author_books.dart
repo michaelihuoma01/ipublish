@@ -5,6 +5,8 @@ import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/books.dart';
 
 class AuthorBooksPage extends StatefulWidget {
+  static const routeName = '/AuthorBooks';
+
   final bool isAuthors;
 
   AuthorBooksPage({this.isAuthors});

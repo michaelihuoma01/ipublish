@@ -3,6 +3,8 @@ import 'package:ipublish/widgets/address_details.dart';
 import 'package:ipublish/widgets/appbar_text.dart';
 
 class DeliveryPage extends StatefulWidget {
+  static const routeName = '/Delivery';
+
   @override
   _DeliveryPageState createState() => _DeliveryPageState();
 }

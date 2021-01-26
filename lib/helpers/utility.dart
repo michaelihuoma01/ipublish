@@ -6,6 +6,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:ipublish/elements/overlay_widget.dart';
 import 'package:ipublish/helpers/constants.dart';
+import 'package:ipublish/helpers/remote_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Utility {
@@ -53,9 +54,11 @@ class Utility {
     Flushbar(
       margin: EdgeInsets.all(10),
       borderRadius: 10,
-      icon: Icon(iconData ?? type == MessageTypes.error
-          ? Icons.warning
-          : Icons.info_outline, color: Colors.white),
+      icon: Icon(
+          iconData ?? type == MessageTypes.error
+              ? Icons.warning
+              : Icons.info_outline,
+          color: Colors.white),
       message: message ??
           (type == MessageTypes.error ? 'An Error occurred.' : 'Loading...'),
       duration: duration ?? Duration(seconds: 2),
@@ -72,8 +75,10 @@ class Utility {
   static const PhoneRegExp = r'^(?:[+0][1-9])?[0-9]{10,12}$';
 }
 
-final getIt = GetIt.instance;
+GetIt getIt = GetIt.instance;
 
-setupLocator() {
+Future setupLocator() async {
   getIt.registerLazySingleton(() => FlutterSecureStorage());
+  var remoteConfigService = await RemoteConfigService.getInstance();
+  getIt.registerSingleton(remoteConfigService);
 }

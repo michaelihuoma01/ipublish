@@ -5,6 +5,8 @@ import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/authors_tile.dart';
 
 class PublisherPage extends StatefulWidget {
+  static const routeName = '/Publishers';
+
   @override
   _PublisherPageState createState() => _PublisherPageState();
 }

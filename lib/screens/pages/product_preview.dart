@@ -1,12 +1,16 @@
+import 'package:epub_viewer/epub_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 
 class ProductPreview extends StatefulWidget {
+  static const routeName = '/ProductPreview';
+
   @override
   _ProductPreviewState createState() => _ProductPreviewState();
 }
 
 class _ProductPreviewState extends State<ProductPreview> {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(

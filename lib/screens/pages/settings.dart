@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ipublish/helpers/constants.dart';
 import 'package:ipublish/screens/auth/login.dart';
 import 'package:ipublish/screens/auth/update_password.dart';
-import 'package:ipublish/screens/onboarding.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/settings_tile.dart';
 
 class SettingsPage extends StatefulWidget {
+  static const routeName = '/Settings';
+
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
@@ -37,11 +37,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   style: TextStyle(fontFamily: 'Helvetica', fontSize: 15)),
               SizedBox(height: 10),
               InkWell(
-                onTap: () =>  Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LoginScreen())),
-                              child: SettingsTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen())),
+                child: SettingsTile(
                   isAccount: true,
                   prefixIcon: Icon(Icons.logout),
                   label: 'Logout',
@@ -51,11 +49,9 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               SizedBox(height: 10),
               InkWell(
-                onTap: () =>  Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => UpdatePassword())),
-                              child: SettingsTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UpdatePassword())),
+                child: SettingsTile(
                   isAccount: true,
                   prefixIcon: Icon(Icons.lock_clock),
                   label: 'Update Password',
@@ -103,8 +99,8 @@ class _SettingsPageState extends State<SettingsPage> {
                 isAccount: false,
                 prefixIcon: Icon(Icons.info, size: 18),
                 label: 'Share App',
-                suffixIcon: Icon(FontAwesomeIcons.share,
-                    color: Colors.grey, size: 15),
+                suffixIcon:
+                    Icon(FontAwesomeIcons.share, color: Colors.grey, size: 15),
               )
             ],
           ),

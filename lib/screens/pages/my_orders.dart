@@ -4,6 +4,8 @@ import 'package:ipublish/screens/pages/order_details.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 
 class MyOrdersPage extends StatefulWidget {
+  static const routeName = '/MyOrders';
+
   @override
   _MyOrdersPageState createState() => _MyOrdersPageState();
 }

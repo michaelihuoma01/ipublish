@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ipublish/screens/settings.dart';
+import 'package:ipublish/screens/pages/settings.dart';
 import 'package:ipublish/screens/tabs/edit_profile.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/button.dart';

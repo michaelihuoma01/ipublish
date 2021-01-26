@@ -4,6 +4,8 @@ import 'package:ipublish/widgets/button.dart';
 import 'package:ipublish/widgets/textformfield_widget.dart';
 
 class UpdatePassword extends StatefulWidget {
+  static const routeName = '/UpdatePassword';
+
   @override
   _UpdatePasswordState createState() => _UpdatePasswordState();
 }

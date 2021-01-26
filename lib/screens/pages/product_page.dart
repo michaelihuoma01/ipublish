@@ -1,4 +1,6 @@
+import 'package:epub_viewer/epub_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ipublish/screens/pages/product_preview.dart';
 import 'package:ipublish/screens/tabs/add_to_cart.dart';
@@ -6,6 +8,8 @@ import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/button.dart';
 
 class ProductPage extends StatefulWidget {
+  static const routeName = '/ProductPage';
+
   @override
   _ProductPageState createState() => _ProductPageState();
 }
@@ -44,6 +48,7 @@ class _ProductPageState extends State<ProductPage>
 
   @override
   Widget build(BuildContext context) {
+    ScreenScaler scaler = new ScreenScaler();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBarWidget(
@@ -169,7 +174,7 @@ class _ProductPageState extends State<ProductPage>
                         ),
                         Positioned(
                           top: 25,
-                          left: 235,
+                          left: 215,
                           child: Center(
                             child: Image.asset(
                               'assets/images/png/discount.png',
@@ -182,7 +187,7 @@ class _ProductPageState extends State<ProductPage>
                     // ),
                     SizedBox(height: 10),
                     Container(
-                      width: MediaQuery.of(context).size.width * .470,
+                      width: scaler.getWidth(16),
                       decoration: BoxDecoration(
                         color: Colors.white24,
                         borderRadius: BorderRadius.all(Radius.circular((10))),
@@ -190,6 +195,7 @@ class _ProductPageState extends State<ProductPage>
                       child: Padding(
                         padding: const EdgeInsets.all(12),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Column(
                               children: [
@@ -249,10 +255,18 @@ class _ProductPageState extends State<ProductPage>
                         Icon(Icons.favorite_outline, color: Colors.white),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ProductPreview()));
+                            EpubViewer.setConfig(
+                                identifier: 'iosBook',
+                                enableTts: true,
+                                allowSharing: false,
+                                nightMode: true,
+                                scrollDirection: EpubScrollDirection.VERTICAL);
+                            EpubViewer.openAsset(
+                                'assets/the_diary_of_a_young_girl.epub');
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => ProductPreview()));
                           },
                           child: Container(
                             decoration: BoxDecoration(

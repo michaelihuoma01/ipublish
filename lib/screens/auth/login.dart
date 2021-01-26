@@ -10,6 +10,8 @@ import 'package:ipublish/widgets/textformfield_widget.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 class LoginScreen extends StatefulWidget {
+  static const routeName = '/Login';
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }

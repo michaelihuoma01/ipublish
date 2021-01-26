@@ -6,6 +6,8 @@ import 'package:ipublish/widgets/button.dart';
 import 'package:ipublish/widgets/textformfield_widget.dart';
 
 class ForgotPassword extends StatefulWidget {
+  static const routeName = '/ForgotPassword';
+
   @override
   _ForgotPasswordState createState() => _ForgotPasswordState();
 }
@@ -67,7 +69,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     SizedBox(height: 30),
                     Center(
                       child: Image.asset(
-                        'assets/images/png/forgot_password.png', 
+                        'assets/images/png/forgot_password.png',
                         height: 190,
                       ),
                     ),
@@ -100,7 +102,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         ButtonWidget(
                             title: 'Next',
                             background: true,
-
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(

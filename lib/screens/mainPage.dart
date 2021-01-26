@@ -1,6 +1,5 @@
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/material.dart'; 
 import 'package:ipublish/screens/tabs/add_to_cart.dart';
 import 'package:ipublish/screens/tabs/cart_tab.dart';
 import 'package:ipublish/screens/tabs/edit_profile.dart';
@@ -10,6 +9,8 @@ import 'package:ipublish/screens/tabs/services_tab.dart';
 import 'package:ipublish/widgets/tabs.dart';
 
 class MainPage extends StatefulWidget {
+  static const routeName = '/MainPage';
+
   @override
   _MainPageState createState() => _MainPageState();
 }

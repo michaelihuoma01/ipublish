@@ -5,6 +5,8 @@ import 'package:ipublish/widgets/button.dart';
 import 'package:ipublish/widgets/counter_button.dart';
 
 class OrderSummary extends StatefulWidget {
+  static const routeName = '/OrderSummary';
+
   @override
   _OrderSummaryState createState() => _OrderSummaryState();
 }

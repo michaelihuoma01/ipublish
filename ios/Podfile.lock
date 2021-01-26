@@ -1,4 +1,15 @@
 PODS:
+  - AEXML (4.6.0)
+  - epub_viewer (0.0.1):
+    - EpubViewerKit (~> 0.1.2)
+    - Flutter
+  - EpubViewerKit (0.1.2):
+    - AEXML (= 4.6.0)
+    - FontBlaster (= 5.1.1)
+    - MenuItemKit (= 4.0.1)
+    - RealmSwift (= 5.4.8)
+    - SSZipArchive (= 2.2.3)
+    - ZFDragableModalTransition (= 0.6)
   - Firebase/CoreOnly (7.3.0):
     - FirebaseCore (= 7.3.0)
   - Firebase/Crashlytics (7.3.0):
@@ -48,6 +59,7 @@ PODS:
   - Flutter (1.0.0)
   - flutter_secure_storage (3.3.1):
     - Flutter
+  - FontBlaster (5.1.1)
   - GoogleDataTransport (8.1.0):
     - nanopb (~> 2.30906.0)
   - GoogleUtilities/Environment (7.2.0):
@@ -57,25 +69,39 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.2.0)"
   - GoogleUtilities/UserDefaults (7.2.0):
     - GoogleUtilities/Logger
+  - MenuItemKit (4.0.1)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
+  - path_provider (0.0.1):
+    - Flutter
   - PromisesObjC (1.2.12)
+  - Realm (5.4.8):
+    - Realm/Headers (= 5.4.8)
+  - Realm/Headers (5.4.8)
+  - RealmSwift (5.4.8):
+    - Realm (= 5.4.8)
   - shared_preferences (0.0.1):
     - Flutter
+  - SSZipArchive (2.2.3)
+  - ZFDragableModalTransition (0.6)
 
 DEPENDENCIES:
+  - epub_viewer (from `.symlinks/plugins/epub_viewer/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - firebase_remote_config (from `.symlinks/plugins/firebase_remote_config/ios`)
   - Flutter (from `Flutter`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
 
 SPEC REPOS:
   trunk:
+    - AEXML
+    - EpubViewerKit
     - Firebase
     - FirebaseABTesting
     - FirebaseCore
@@ -83,12 +109,20 @@ SPEC REPOS:
     - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseRemoteConfig
+    - FontBlaster
     - GoogleDataTransport
     - GoogleUtilities
+    - MenuItemKit
     - nanopb
     - PromisesObjC
+    - Realm
+    - RealmSwift
+    - SSZipArchive
+    - ZFDragableModalTransition
 
 EXTERNAL SOURCES:
+  epub_viewer:
+    :path: ".symlinks/plugins/epub_viewer/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
   firebase_crashlytics:
@@ -99,10 +133,15 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_secure_storage:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
 
 SPEC CHECKSUMS:
+  AEXML: 2fbb73d8724797ed2cde888731e176fa4d44dd83
+  epub_viewer: 46bb3de7348b95aa1f50bd229dbb3cb50dc280cf
+  EpubViewerKit: b1c5b8a3d20a3af7bb5398671b15f5a7dcef54e0
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
   firebase_core: 91b27774a52f41f8b58484a75edf71197ac01c59
   firebase_crashlytics: e6ecb908f6249ce3757d18a812819a41495bf1cb
@@ -115,11 +154,18 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfig: 826fad8bec5ce1912ef97a124d6ec0ce4dcf6ec1
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
   flutter_secure_storage: 7953c38a04c3fdbb00571bcd87d8e3b5ceb9daec
+  FontBlaster: 8897ebdbb4b6ace3ab78c92b665d88c954f19e4a
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
+  MenuItemKit: 1459920e984d823e1bcc858b7a964f94e6bfa0f6
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
+  path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  Realm: 042bbb59227a0159eda397b8a5a49fbd67495ce7
+  RealmSwift: 15ddd6b3398ebfc99810811c44f095df1313adb3
   shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
 
 PODFILE CHECKSUM: 26dc4165783fc26cc8f0e4e55b42a2579d511ad0
 

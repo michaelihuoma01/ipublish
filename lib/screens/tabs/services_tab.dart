@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ipublish/screens/pages/design_services.dart';
+import 'package:ipublish/screens/pages/services.dart';
 import 'package:ipublish/widgets/appbar_text.dart';
 import 'package:ipublish/widgets/service_widget.dart';
 
@@ -32,10 +32,8 @@ class _ServicesTabState extends State<ServicesTab> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DesignServices()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ServicesPage()));
                 },
                 child: ServicesWidget(
                   image: Image.asset(
