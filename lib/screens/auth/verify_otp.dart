@@ -33,67 +33,56 @@ class _VerifyOTPState extends State<VerifyOTP> {
               ],
             ),
           ),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Image.asset('assets/images/png/verify_otp.png'),
+                ),
+                Center(
+                  child: Text('Verify OTP',
+                      style: TextStyle(fontFamily: 'Helvetica', fontSize: 20)),
+                ),
+                SizedBox(height: 10),
+                Center(
+                  child: Text(
+                      'Enter the 4-digit code sent to your email or phone',
+                      style: TextStyle()),
+                ),
+                SizedBox(height: 10),
+                InputCodeField(
+                  control: codeControl,
+                  count: 4,
+                  inputType: TextInputType.number,
+                  decoration: InputCodeDecoration(
+                    focusColor: Theme.of(context).accentColor,
+                    color: Colors.white,
+                    textStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontFamily: 'Brand-Bold'),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 100),
-                      child: Center(
-                        child: Image.asset(
-                          'assets/images/png/verify_otp.png',
-                          height: 190,
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Text('Verify OTP',
-                          style:
-                              TextStyle(fontFamily: 'Helvetica', fontSize: 20)),
-                    ),
-                    SizedBox(height: 10),
-                    Center(
-                      child: Text(
-                          'Enter the 4-digit code sent to your email or phone',
-                          style: TextStyle()),
-                    ),
-                    SizedBox(height: 10),
-                    InputCodeField(
-                      control: codeControl,
-                      count: 4,
-                      inputType: TextInputType.number,
-                      decoration: InputCodeDecoration(
-                        focusColor: Theme.of(context).accentColor,
-                        color: Colors.white,
-                        textStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 25,
-                            fontFamily: 'Brand-Bold'),
-                      ),
-                    ),
-                    SizedBox(height: 40),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ButtonWidget(
-                            title: 'Back',
-                            onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginScreen()))),
-                        ButtonWidget(
-                            title: 'Verify',
-                            onPressed: () => Navigator.pop(context),
-                            background: true),
-                      ],
-                    ),
+                    ButtonWidget(
+                        title: 'Back',
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()))),
+                    ButtonWidget(
+                        title: 'Verify',
+                        onPressed: () => Navigator.pop(context),
+                        background: true),
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

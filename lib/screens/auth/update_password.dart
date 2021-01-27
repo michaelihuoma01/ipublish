@@ -33,6 +33,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(20),
@@ -40,9 +41,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 80),
-                        child: RichText(
+                      child: RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
                             style: TextStyle(fontFamily: 'Paltn', fontSize: 23),
@@ -64,7 +63,7 @@ class _UpdatePasswordState extends State<UpdatePassword> {
                           ),
                         ),
                       ),
-                    ), 
+                    
                     Center(
                       child: Image.asset(
                         'assets/images/png/update_password.png', 

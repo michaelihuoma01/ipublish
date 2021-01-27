@@ -34,35 +34,33 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 70),
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            style: TextStyle(fontFamily: 'Paltn', fontSize: 23),
-                            children: <TextSpan>[
-                              new TextSpan(
-                                  text: 'Forgot ',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Paltn',
-                                      fontSize: 23,
-                                      fontWeight: FontWeight.w700)),
-                              new TextSpan(
-                                  text: 'Password?',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontFamily: 'Paltn',
-                                      fontSize: 23)),
-                            ],
-                          ),
+                      child: RichText(
+                        textAlign: TextAlign.center,
+                        text: TextSpan(
+                          style: TextStyle(fontFamily: 'Paltn', fontSize: 23),
+                          children: <TextSpan>[
+                            new TextSpan(
+                                text: 'Forgot ',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Paltn',
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.w700)),
+                            new TextSpan(
+                                text: 'Password?',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: 'Paltn',
+                                    fontSize: 23)),
+                          ],
                         ),
                       ),
                     ),
@@ -70,7 +68,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     Center(
                       child: Image.asset(
                         'assets/images/png/forgot_password.png',
-                        height: 190,
                       ),
                     ),
                     SizedBox(height: 30),
@@ -93,12 +90,20 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        ButtonWidget(
-                            title: 'Update Password',
-                            onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => UpdatePassword()))),
+                        FlatButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => UpdatePassword()));
+                            },
+                            child: Text(
+                              'Update Password',
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 15.0),
+                            ),
+                          ),
+                        
                         ButtonWidget(
                             title: 'Next',
                             background: true,
