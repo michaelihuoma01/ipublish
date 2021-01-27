@@ -13,19 +13,6 @@ import 'package:ipublish/screens/mainPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final RemoteConfigService _remoteConfigService = getIt<RemoteConfigService>();
-
-  print(_remoteConfigService.getBaseUrl);
-
-  // await GlobalConfiguration().loadFromAsset("configurations.sample");
-
-  // print(CustomTrace(StackTrace.current,
-  //     message: "base_url: ${GlobalConfiguration().getValue('base_url')}"));
-  // print(CustomTrace(StackTrace.current,
-  //     message:
-  //         "api_base_url: ${GlobalConfiguration().getValue('api_base_url')}"));
-
-  await _remoteConfigService.initialise();
   await setupLocator();
   runApp(MyApp());
 }
@@ -37,12 +24,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   FlutterSecureStorage storage = getIt<FlutterSecureStorage>();
+  final RemoteConfigService _remoteConfigService = getIt<RemoteConfigService>();
+
+  initRemoteConfig() async {
+    await _remoteConfigService.initialise();
+    print(_remoteConfigService.getBaseUrl);
+  }
 
   @override
   void initState() {
     super.initState();
-
     _initFirebase();
+    initRemoteConfig();
   }
 
   void _initFirebase() async {

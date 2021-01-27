@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:http/http.dart' as http;
+import 'package:ipublish/helpers/remote_config.dart';
 import 'package:ipublish/helpers/utility.dart';
 import 'package:ipublish/models/iresponse.dart';
 import 'package:ipublish/models/password.dart';
@@ -16,7 +17,9 @@ const headers = {
   "accept": "application/json",
 };
 
-final String url = '${GlobalConfiguration().getValue('api_base_url')}';
+final RemoteConfigService _remoteConfigService = getIt<RemoteConfigService>();
+
+final String url = '${_remoteConfigService.getBaseUrl}';
 
 Future<IResponse<User>> login(User user) async {
   Map<String, String> headers = {
