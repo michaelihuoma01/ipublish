@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)"
+options: "95d02402755418c3be0d0a47526538a9923abb6980b80b06b3d16b9a81ac7ef2"
+build_start_time: [1637082699, 860452175]
+build_end_time: [1637082700, 108018875]
+inputs:
+  "/Users/magikmike/Documents/Flutter/ipublish/ios/Runner/AppDelegate.swift": !private [1614667757, 653481960]

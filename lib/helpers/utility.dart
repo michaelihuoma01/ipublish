@@ -79,6 +79,6 @@ GetIt getIt = GetIt.instance;
 
 Future setupLocator() async {
   getIt.registerLazySingleton(() => FlutterSecureStorage());
-  var remoteConfigService = await RemoteConfigService.getInstance();
-  getIt.registerSingleton(remoteConfigService);
+  // var remoteConfigService = await RemoteConfigService.getInstance();
+  // getIt.registerSingleton(remoteConfigService);
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ipublish/helpers/constants.dart';
 import 'package:ipublish/widgets/button.dart';
 
 class SuccessPage extends StatefulWidget {

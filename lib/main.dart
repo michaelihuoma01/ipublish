@@ -3,8 +3,6 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:global_configuration/global_configuration.dart';
-import 'package:ipublish/helpers/custom_trace.dart';
 import 'package:ipublish/helpers/remote_config.dart';
 import 'package:ipublish/helpers/utility.dart';
 import 'package:ipublish/route_generator.dart';
@@ -13,6 +11,7 @@ import 'package:ipublish/screens/mainPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await setupLocator();
   runApp(MyApp());
 }
@@ -23,19 +22,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  FlutterSecureStorage storage = getIt<FlutterSecureStorage>();
-  final RemoteConfigService _remoteConfigService = getIt<RemoteConfigService>();
+  // final RemoteConfigService _remoteConfigService = getIt<RemoteConfigService>();
 
-  initRemoteConfig() async {
-    await _remoteConfigService.initialise();
-    print(_remoteConfigService.getBaseUrl);
-  }
+  // initRemoteConfig() async {
+  //   await _remoteConfigService.initialise();
+  //   print(_remoteConfigService.getBaseUrl);
+  // }
 
   @override
   void initState() {
     super.initState();
     _initFirebase();
-    initRemoteConfig();
+    // initRemoteConfig();
   }
 
   void _initFirebase() async {

@@ -1,5 +1,5 @@
 import 'package:cuberto_bottom_bar/cuberto_bottom_bar.dart';
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:ipublish/screens/tabs/add_to_cart.dart';
 import 'package:ipublish/screens/tabs/cart_tab.dart';
 import 'package:ipublish/screens/tabs/edit_profile.dart';

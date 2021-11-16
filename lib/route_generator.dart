@@ -32,7 +32,6 @@ class RouteGenerator {
           builder: (_) => LoginScreen(),
           settings: RouteSettings(name: LoginScreen.routeName),
         );
-
       case OnBoardingScreen.routeName:
         return MaterialPageRoute(
           builder: (_) => OnBoardingScreen(),

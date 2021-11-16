@@ -2,7 +2,6 @@ import 'package:epub_viewer/epub_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_scaler/flutter_screen_scaler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ipublish/screens/pages/product_preview.dart';
 import 'package:ipublish/screens/tabs/add_to_cart.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 import 'package:ipublish/widgets/button.dart';

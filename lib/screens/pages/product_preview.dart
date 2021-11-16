@@ -1,4 +1,3 @@
-import 'package:epub_viewer/epub_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:ipublish/widgets/appbar_widget.dart';
 

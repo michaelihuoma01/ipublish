@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ipublish/screens/pages/search_results.dart';
-import 'package:ipublish/widgets/genre.dart';
 import 'package:ipublish/widgets/textformfield_widget.dart';
 
 class SearchPage extends StatefulWidget {

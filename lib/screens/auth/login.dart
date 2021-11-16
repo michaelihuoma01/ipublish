@@ -180,7 +180,12 @@ class _LoginScreenState extends StateMVC<LoginScreen> {
                         child: ButtonWidget(
                       title: 'Sign In',
                       onPressed: () {
-                        _con.login();
+                        // _con.login();
+                           Navigator.of(_con.scaffoldKey?.currentContext).pushReplacementNamed(
+        MainPage.routeName,
+        arguments: 0,
+      );
+                        
                       },
                       background: true,
                     )),
